@@ -2,39 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Panchakarma Management Software Design System - Healing & Wellness Theme */
 
 @layer base {
   :root {
+    /* Base colors - Clean medical whites with subtle warmth */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 155 25% 15%;
 
+    /* Card system - Subtle wellness tones */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 155 25% 15%;
 
+    /* Popover system */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 155 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep healing green (Ayurvedic wellness) */
+    --primary: 155 65% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 155 45% 85%;
+    --primary-glow: 155 55% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Calming ocean blue (medical trust) */
+    --secondary: 200 50% 94%;
+    --secondary-foreground: 200 80% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Soft neutral tones */
+    --muted: 155 15% 96%;
+    --muted-foreground: 155 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Warm golden amber (traditional, premium) */
+    --accent: 45 85% 75%;
+    --accent-foreground: 45 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Wellness color palette */
+    --wellness-green: 155 65% 35%;
+    --wellness-blue: 200 80% 45%;
+    --wellness-amber: 45 85% 65%;
+    --wellness-soft: 155 25% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Status colors - Medical themed */
+    --success: 155 65% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 85% 55%;
+    --warning-foreground: 45 25% 15%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI elements */
+    --border: 155 20% 90%;
+    --input: 155 20% 95%;
+    --ring: 155 65% 35%;
+
+    /* Gradients for wellness theme */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--wellness-green)), hsl(var(--primary-glow)));
+    --gradient-wellness: linear-gradient(135deg, hsl(var(--wellness-green)), hsl(var(--wellness-blue)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--wellness-soft)), hsl(var(--background)));
+    
+    /* Shadows with healing green glow */
+    --shadow-wellness: 0 10px 30px -10px hsl(var(--wellness-green) / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(var(--wellness-green) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--wellness-green) / 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --radius: 0.5rem;
 
@@ -56,41 +89,45 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme - Maintain wellness feel with darker tones */
+    --background: 155 25% 8%;
+    --foreground: 155 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 155 25% 10%;
+    --card-foreground: 155 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 155 25% 10%;
+    --popover-foreground: 155 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 155 55% 55%;
+    --primary-foreground: 155 25% 10%;
+    --primary-soft: 155 35% 20%;
+    --primary-glow: 155 55% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 200 30% 15%;
+    --secondary-foreground: 200 50% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 155 20% 15%;
+    --muted-foreground: 155 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 75% 60%;
+    --accent-foreground: 45 25% 10%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --wellness-green: 155 55% 55%;
+    --wellness-blue: 200 70% 60%;
+    --wellness-amber: 45 75% 60%;
+    --wellness-soft: 155 25% 12%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --success: 155 55% 55%;
+    --success-foreground: 155 25% 10%;
+    --warning: 45 75% 60%;
+    --warning-foreground: 45 25% 10%;
+    --destructive: 0 65% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 155 20% 20%;
+    --input: 155 20% 18%;
+    --ring: 155 55% 55%;
   }
 }
 
